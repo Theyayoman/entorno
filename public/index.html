@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Archivos</title>
+</head>
+<body>
+    <h1>Explorador de Archivos</h1>
+    <ul id="file-list"></ul>
+
+    <script>
+        async function loadFiles() {
+            try {
+                const response = await fetch('/C:/Shares/SISTEMAS');
+                const files = await response.json();
+                const fileList = document.getElementById('file-list');
+                fileList.innerHTML = files.map(file => `<li>${file.name}</li>`).join('');
+            } catch (error) {
+                console.error('Error al cargar archivos:', error);
+            }
+        }
+
+        loadFiles();
+    </script>
+</body>
+</html>

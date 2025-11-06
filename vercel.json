@@ -1,0 +1,11 @@
+{
+    "functions": {
+      "src/pages/api/FTP/upload.js": {
+        "maxDuration": 60
+      },
+      "src/pages/api/MarketingLabel/GuardarEtiquetas.js": {
+        "maxDuration": 60
+      }
+    }
+  }
+  
